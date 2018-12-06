@@ -1,11 +1,12 @@
 {
-  "name": "react-hooks",
+  "name": "react-hooks-predictable-state-without-redux",
+  "description": "React predictable state example using Hooks and Context API without Redux.",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "prop-types": "^15.6.2",
-    "react": "16.7.0-alpha",
-    "react-dom": "16.7.0-alpha",
+    "react": "16.7.0-alpha.2",
+    "react-dom": "16.7.0-alpha.2",
     "react-scripts": "2.1.1"
   },
   "scripts": {
