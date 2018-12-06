@@ -1,5 +1,5 @@
 import React, { useEffect, useContext } from 'react';
-import { NameContext } from "../providers/nameProvider";
+import { NameContext } from "../providers/NameProvider";
 import NameForm from '../components/NameForm';
 import ActionList from '../components/ActionList';
 
