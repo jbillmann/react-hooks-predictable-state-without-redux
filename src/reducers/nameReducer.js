@@ -20,7 +20,7 @@ export const actions = {
 };
 
 export const reducer = (state, action) => {
-  var newActions = [...state.actions];
+  let newActions = [...state.actions];
   newActions.unshift(action);
 
   switch (action.type) {
@@ -31,11 +31,11 @@ export const reducer = (state, action) => {
       return { ...state, ...{ actions: newActions, isLoading: false }};
 
     case types.RECEIVE_NAME:
-      var newName = action.value.name.split(' ');
+      const newName = action.value.name.split(' ');
       return { ...state, ...{ actions: newActions, firstName: newName[0], lastName: newName[1], isLoading: true }};
 
     case types.UPDATE_NAME:
-      var newState = { ...state, ...action.value, ...{ actions: newActions }}
+      const newState = { ...state, ...action.value, ...{ actions: newActions }}
       return newState;
 
     default:
