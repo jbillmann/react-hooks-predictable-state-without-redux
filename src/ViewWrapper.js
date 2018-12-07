@@ -1,11 +1,11 @@
 import React from 'react';
-import { NameProvider } from "./providers/NameProvider";
+import { StoreProvider } from "./providers/Store";
 import Name from './views/Name';
 
 export default function ViewWrapper(props) {
   return (
-    <NameProvider>
+    <StoreProvider>
         <Name />
-    </NameProvider>
+    </StoreProvider>
   );
 }

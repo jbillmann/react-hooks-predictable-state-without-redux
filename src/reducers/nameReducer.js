@@ -8,7 +8,6 @@ const types = {
 export const initialState = {
   firstName: '',
   lastName: '',
-  actions: [],
   isLoading: false
 };
 
@@ -20,25 +19,27 @@ export const actions = {
 };
 
 export const reducer = (state, action) => {
-  let newActions = [...state.actions];
-  newActions.unshift(action);
-
   switch (action.type) {
     case types.RESET_NAME:
-      return { ...initialState, ...{ actions: newActions }};
+      return { ...initialState };
 
     case types.REQUEST_NAME:
-      return { ...state, ...{ actions: newActions, isLoading: false }};
+      return { ...state, ...{ isLoading: false }};
 
     case types.RECEIVE_NAME:
       const newName = action.value.name.split(' ');
-      return { ...state, ...{ actions: newActions, firstName: newName[0], lastName: newName[1], isLoading: true }};
+      return { ...state, ...{ firstName: newName[0], lastName: newName[1], isLoading: true }};
 
     case types.UPDATE_NAME:
-      const newState = { ...state, ...action.value, ...{ actions: newActions }}
+      const newState = { ...state, ...action.value }
       return newState;
 
     default:
       return state;
   }
+};
+
+export const register = (globalState, globalActions) => {
+  globalState.name = initialState;
+  globalActions.name = actions;
 };

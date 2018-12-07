@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export default function ActionItem(props) {
+export default function HistoryItem(props) {
   return (
     <li>{props.action}</li>
   );
 };
 
-ActionItem.propTypes = {
+HistoryItem.propTypes = {
   action: PropTypes.string.isRequired
 };

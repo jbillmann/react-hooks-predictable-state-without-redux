@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ActionItem from './ActionItem';
+import HistoryItem from './HistoryItem';
 
-export default function ActionList(props) {
+export default function HistoryList(props) {
   return (
     <ul>
       {props.actions.map((action, index) => {
-        return <ActionItem key={index} action={JSON.stringify(action)} />;
+        return <HistoryItem key={index} action={JSON.stringify(action)} />;
       })}
     </ul>
   );
 };
 
-ActionList.propTypes = {
+HistoryList.propTypes = {
   actions: PropTypes.array.isRequired
 };
