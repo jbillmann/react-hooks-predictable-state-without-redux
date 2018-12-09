@@ -14,7 +14,7 @@ export default function Name(props) {
 
   const handleNameChange = (e, propName) => {
     nameContext.updateName({ [propName]: e.target.value });
-  }
+  };
 
   return (
     <div>

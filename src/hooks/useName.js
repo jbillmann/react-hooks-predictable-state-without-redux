@@ -14,7 +14,7 @@ export default function useName() {
 
   const updateName = (updates) => {
     dispatch(actions.name.updateName(updates));
-  }
+  };
 
   return {
     state: state.name,
