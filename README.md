@@ -1,6 +1,8 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Using React Hooks to Manage and Organize Application State.
 
-## React predictable state example using Hooks and Context API without Redux.
+This repository was made in conjunction with [this blog post](https://www.jbillmann.com/using-react-hooks-to-manage-and-organize-application-state) to walk through a series of steps on how to use React Hooks for managing application state.
+
+Please read the blog post for in-depth information regarding this repository.
 
 ## Install
 
@@ -19,6 +21,9 @@ $ yarn install
 ```
 
 ## Available Scripts
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 In the project directory, you can run:
 

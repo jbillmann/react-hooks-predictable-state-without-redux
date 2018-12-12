@@ -9,7 +9,7 @@ export default function App(props) {
     <StoreProvider>
       <div className="App">
         <header className="App-header">
-          <h2>Predictable state example using React Hooks and Context API</h2>
+          <h2>Using React Hooks to Manage and Organize Application State</h2>
           <img src={logo} className="App-logo" alt="logo" />
           <Main />
         </header>
