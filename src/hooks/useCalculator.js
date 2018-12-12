@@ -4,17 +4,17 @@ import { StoreContext } from "../providers/Store";
 export default function useCalculator() {
   const { state, actions, dispatch } = useContext(StoreContext);
 
-  const add = () => {
-    dispatch(actions.calculator.add());
+  const increase = () => {
+    dispatch(actions.calculator.increase());
   };
 
-  const subtract = () => {
-    dispatch(actions.calculator.subtract());
+  const decrease = () => {
+    dispatch(actions.calculator.decrease());
   };
 
   return {
     state: state.calculator,
-    add,
-    subtract
+    increase,
+    decrease
   };
 };

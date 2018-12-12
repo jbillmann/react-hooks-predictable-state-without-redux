@@ -22,7 +22,7 @@ export default function Main(props) {
   return (
     <div>
       <NameForm name={nameContext.state} nameChange={handleNameChange} />
-      <CalculatorForm value={calculatorContext.state.value} add={calculatorContext.add} subtract={calculatorContext.subtract} />
+      <CalculatorForm value={calculatorContext.state.value} increase={calculatorContext.increase} decrease={calculatorContext.decrease} />
       <HistoryList actions={historyContext.state.actions} />
     </div>
   );

@@ -1,6 +1,6 @@
 const types = {
-  ADD: 'ADD',
-  SUBTRACT: 'SUBTRACT'
+  INCREASE: 'INCREASE',
+  DECREASE: 'DECREASE'
 };
 
 export const initialState = {
@@ -8,16 +8,16 @@ export const initialState = {
 };
 
 export const actions = {
-  add: () => ({ type: types.ADD }),
-  subtract: () => ({ type: types.SUBTRACT })
+  increase: () => ({ type: types.INCREASE }),
+  decrease: () => ({ type: types.DECREASE })
 };
 
 export const reducer = (state, action) => {
   switch (action.type) {
-    case types.ADD:
+    case types.INCREASE:
       return { value: state.value + 1 };
 
-    case types.SUBTRACT:
+    case types.DECREASE:
       return { value: state.value - 1 };
 
     default:

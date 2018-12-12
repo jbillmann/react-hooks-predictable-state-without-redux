@@ -5,14 +5,14 @@ export default function CalculatorForm(props) {
   return (
     <div>
       <p>Value: {props.value}</p>
-      <button type="button" onClick={props.add}>Add</button>
-      <button type="button" onClick={props.subtract}>Subtract</button>
+      <button type="button" onClick={props.increase}>Increase</button>
+      <button type="button" onClick={props.decrease}>Decrease</button>
     </div>
   );
 };
 
 CalculatorForm.propTypes = {
   value: PropTypes.number.isRequired,
-  add: PropTypes.func.isRequired,
-  subtract: PropTypes.func.isRequired
+  increase: PropTypes.func.isRequired,
+  decrease: PropTypes.func.isRequired
 };
