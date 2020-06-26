@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext } from "react";
 import { StoreContext } from "../providers/Store";
 
 export default function useHistory() {
@@ -7,4 +7,4 @@ export default function useHistory() {
   return {
     state: state.history,
   };
-};
+}

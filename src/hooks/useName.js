@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect } from "react";
 import { StoreContext } from "../providers/Store";
 
 export default function useName() {
@@ -8,9 +8,9 @@ export default function useName() {
     dispatch(actions.name.requestName());
     //  Simulate async fetch
     setTimeout(() => {
-      dispatch(actions.name.receiveName({ name: 'Jeremiah Billmann' }));
+      dispatch(actions.name.receiveName({ name: "Jeremiah Billmann" }));
     }, 500);
-  }, []);
+  }, [actions.name, dispatch]);
 
   const updateName = (updates) => {
     dispatch(actions.name.updateName(updates));
@@ -18,6 +18,6 @@ export default function useName() {
 
   return {
     state: state.name,
-    updateName
+    updateName,
   };
-};
+}

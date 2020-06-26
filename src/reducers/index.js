@@ -1,18 +1,22 @@
-import { register as nameRegister, reducer as nameReducer } from './nameReducer';
-import { register as historyRegister, reducer as historyReducer } from './historyReducer';
-import { register as calculatorRegister, reducer as calculatorReducer } from './calculatorReducer';
+import reducerIndex from "./reducerIndex";
 
-export const initialState = {};
-export const actions = {};
+let initialState = {};
+let actions = {};
 
-nameRegister(initialState, actions);
-historyRegister(initialState, actions);
-calculatorRegister(initialState, actions);
+Object.keys(reducerIndex).forEach((p) => {
+  initialState[p] = reducerIndex[p].initialState;
+  actions[p] = reducerIndex[p].actions;
+});
+
+export { initialState };
+export { actions };
 
 export const reducer = (state, action) => {
-  return {
-    history: historyReducer(state.history, action),
-    name: nameReducer(state.name, action),
-    calculator: calculatorReducer(state.calculator, action)
-  };
+  let newState = {};
+
+  Object.keys(reducerIndex).forEach((p) => {
+    newState[p] = reducerIndex[p].reducer(state[p], action);
+  });
+
+  return newState;
 };

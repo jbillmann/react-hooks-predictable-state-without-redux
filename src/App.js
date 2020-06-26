@@ -1,8 +1,8 @@
-import React from 'react';
+import React from "react";
 import { StoreProvider } from "./providers/Store";
-import Main from './views/Main';
-import logo from './logo.svg';
-import './App.css';
+import Main from "./views/Main";
+import logo from "./logo.svg";
+import "./App.css";
 
 export default function App(props) {
   return (

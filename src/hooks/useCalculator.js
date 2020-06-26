@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext } from "react";
 import { StoreContext } from "../providers/Store";
 
 export default function useCalculator() {
@@ -15,6 +15,6 @@ export default function useCalculator() {
   return {
     state: state.calculator,
     increase,
-    decrease
+    decrease,
   };
-};
+}

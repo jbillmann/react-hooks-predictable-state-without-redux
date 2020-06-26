@@ -1,37 +1,40 @@
 const types = {
-  RESET_NAME: 'RESET_NAME',
-  UPDATE_NAME: 'UPDATE_NAME',
-  REQUEST_NAME: 'REQUEST_NAME',
-  RECEIVE_NAME: 'RECEIVE_NAME'
+  RESET_NAME: "RESET_NAME",
+  UPDATE_NAME: "UPDATE_NAME",
+  REQUEST_NAME: "REQUEST_NAME",
+  RECEIVE_NAME: "RECEIVE_NAME",
 };
 
-export const initialState = {
-  firstName: '',
-  lastName: '',
-  isLoading: false
+const initialState = {
+  firstName: "",
+  lastName: "",
+  isLoading: false,
 };
 
-export const actions = {
+const actions = {
   updateName: (updates) => ({ type: types.UPDATE_NAME, value: updates }),
   resetName: () => ({ type: types.RESET_NAME }),
   requestName: () => ({ type: types.REQUEST_NAME }),
-  receiveName: (json) => ({ type: types.RECEIVE_NAME, value: json })
+  receiveName: (json) => ({ type: types.RECEIVE_NAME, value: json }),
 };
 
-export const reducer = (state, action) => {
+const reducer = (state, action) => {
   switch (action.type) {
     case types.RESET_NAME:
       return { ...initialState };
 
     case types.REQUEST_NAME:
-      return { ...state, ...{ isLoading: false }};
+      return { ...state, ...{ isLoading: false } };
 
     case types.RECEIVE_NAME:
-      const newName = action.value.name.split(' ');
-      return { ...state, ...{ firstName: newName[0], lastName: newName[1], isLoading: true }};
+      const newName = action.value.name.split(" ");
+      return {
+        ...state,
+        ...{ firstName: newName[0], lastName: newName[1], isLoading: true },
+      };
 
     case types.UPDATE_NAME:
-      const newState = { ...state, ...action.value }
+      const newState = { ...state, ...action.value };
       return newState;
 
     default:
@@ -39,7 +42,8 @@ export const reducer = (state, action) => {
   }
 };
 
-export const register = (globalState, globalActions) => {
-  globalState.name = initialState;
-  globalActions.name = actions;
+export default {
+  initialState,
+  actions,
+  reducer,
 };

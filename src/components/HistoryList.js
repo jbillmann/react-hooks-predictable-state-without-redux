@@ -1,6 +1,6 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import HistoryItem from './HistoryItem';
+import React from "react";
+import PropTypes from "prop-types";
+import HistoryItem from "./HistoryItem";
 
 export default function HistoryList(props) {
   return (
@@ -10,8 +10,8 @@ export default function HistoryList(props) {
       })}
     </ul>
   );
-};
+}
 
 HistoryList.propTypes = {
-  actions: PropTypes.array.isRequired
+  actions: PropTypes.array.isRequired,
 };

@@ -1,18 +1,18 @@
 const types = {
-  INCREASE: 'INCREASE',
-  DECREASE: 'DECREASE'
+  INCREASE: "INCREASE",
+  DECREASE: "DECREASE",
 };
 
-export const initialState = {
-  value: 0
+const initialState = {
+  value: 0,
 };
 
-export const actions = {
+const actions = {
   increase: () => ({ type: types.INCREASE }),
-  decrease: () => ({ type: types.DECREASE })
+  decrease: () => ({ type: types.DECREASE }),
 };
 
-export const reducer = (state, action) => {
+const reducer = (state, action) => {
   switch (action.type) {
     case types.INCREASE:
       return { value: state.value + 1 };
@@ -25,7 +25,8 @@ export const reducer = (state, action) => {
   }
 };
 
-export const register = (globalState, globalActions) => {
-  globalState.calculator = initialState;
-  globalActions.calculator = actions;
+export default {
+  initialState,
+  actions,
+  reducer,
 };
